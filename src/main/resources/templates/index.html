@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: site-head">
+    <title>Library</title>
+</head>
+<body>
+<header th:replace="layout :: site-header"></header>
+
+<main>
+    <div class="sidebar">
+        <h3 class="recent-articles-title">Recent Articles</h3>
+        <span th:each="p : ${recentArticles}">
+            <a href="#" class="recent-article" th:text="${p.title}" th:href="@{/articles/view/{id}/(id=${p.id})}"/>
+            <span class="article-date"><i class="far fa-clock"></i> <b th:text="${#dates.format(p.date, 'dd MMM yyyy HH:mm')}"></b></span>
+            <div class="end-article"/>
+        </span>
+    </div>
+</main>
+
+<footer th:replace="layout :: site-footer"></footer>
+</body>
+
+</html>

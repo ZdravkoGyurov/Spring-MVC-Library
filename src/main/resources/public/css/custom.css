@@ -1,0 +1,158 @@
+.header {
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.text-header-footer {
+    color: #32aae1;
+}
+
+.btn-outline-info {
+    color: #32aae1;
+    border-color: #32aae1;
+}
+
+.btn-outline-info:hover {
+    color: rgba(0, 0, 0, 0.65);
+    background-color: #32aae1;
+    border-color: #32aae1;
+}
+
+.menu-link {
+    font-weight: bold;
+    text-decoration: none;
+    color: #32aae1;
+}
+
+.menu-link:hover {
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.65);
+    text-align: center;
+    vertical-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.end-header {
+    clear: both;
+}
+
+.main-menu {
+    float: left;
+    margin: 0;
+    font-size: 20px;
+    height: 100%;
+    width: 80%;
+    padding-left: 15px;
+}
+
+.greetings-text {
+    font-size: 20px;
+    margin: 0;
+}
+
+.clock {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.logged-in-info {
+    width: 20%;
+    text-align: right;
+    margin: 0;
+    padding-right: 15px;
+    float: right;
+    height: 100%;
+}
+
+.btn-outline-info {
+    padding: 5px;
+}
+
+.logout-btn {
+    /*float: right;*/
+}
+
+a {
+    margin-right: 15px;
+}
+
+div#messages {
+}
+
+p.error {
+    position:relative;
+    padding:.75rem 1.25rem;
+    margin-bottom:1rem;
+    border:1px solid transparent;
+    /*border-radius:.25rem;*/
+    color:#721c24;
+    background-color:#f8d7da;
+    border-color:#f5c6cb;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+p.info {
+    position:relative;
+    padding:.75rem 1.25rem;
+    margin-bottom:1rem;
+    border:1px solid transparent;
+    /*border-radius:.25rem;*/
+    color:#0c5460;
+    background-color:#d1ecf1;
+    border-color:#bee5eb;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar {
+    border: solid 1px #ddd;
+    border-radius:.25rem;
+    background-color: #e9e9e9;
+    width: 350px;
+    float: right;
+    margin: 10px;
+    padding: 10px;
+}
+
+.recent-article {
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    color: #32aae1;
+}
+
+.recent-article:hover {
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.recent-articles-title {
+    color: rgba(0, 0, 0, 0.65);
+    border-left: 3px solid rgba(0, 0, 0, 0.65);
+    padding-left: 5px;
+}
+
+.article-date {
+    color: rgba(0, 0, 0, 0.65);
+    float:right;
+}
+
+.end-article {
+    border-top: 1px solid rgba(0, 0, 0, 0.65);
+    clear: both;
+}

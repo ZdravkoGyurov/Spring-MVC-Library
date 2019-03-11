@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="site-head">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../public/css/all.min.css" th:href="@{/css/all.min.css}" />
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" href="../public/css/custom.css" th:href="@{/css/custom.css}" />
+
+    <script src="../public/js/all.min.js" th:src="@{/js/all.min.js}"></script>
+    <script src="../public/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="../public/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+    <script src="../public/js/custom.js" th:src="@{/js/custom.js}"></script>
+    <meta th:include="this :: head" th:remove="tag"/>
+</head>
+<body>
+<header th:fragment="site-header" th:remove="tag">
+    <header>
+        <div class="header">
+            <div class="main-menu">
+                <a class="menu-link" href="index.html" th:href="@{/}"><i class="fas fa-book"></i></a>
+                <a class="menu-link" href="index.html" th:href="@{/}">Home</a>
+                <a class="menu-link" href="users/index.html" th:href="@{/users}">Users</a>
+                <a class="menu-link" href="users/register.html" th:href="@{/users/register}">Register</a>
+                <a class="menu-link" href="users/login.html" th:href="@{/users/login}">Login</a>
+                <a class="menu-link" href="users/logout.html" th:href="@{/users/logout}">Logout</a>
+                <a class="menu-link" href="news/index.html" th:href="@{/news}">News</a>
+                <a class="menu-link" href="news/createArticle.html" th:href="@{/news/createArticle}">Create Article</a>
+            </div>
+
+            <div class="logged-in-info">
+                <p class="greetings-text text-header-footer">Welcome, <b>(user)</b></p>
+                <p class="text-header-footer clock"><i class="far fa-clock"></i> <b th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></b></p>
+                <form method="post" th:action="@{/users/logout}">
+                    <input type="submit" class="btn btn-outline-info logout-btn" value="Logout"/>
+                </form>
+            </div>
+
+            <div class="end-header"></div>
+        </div>
+
+        <div id="messages" th:with="notifyMessages=${session[T(library.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
+            <p th:each="msg : ${notifyMessages}" th:text="${msg.text}" th:class="${#strings.toLowerCase(msg.type)}">
+            </p>
+            <span th:if="${notifyMessages}" th:remove="all" th:text="${session.remove(T(library.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY)}"></span>
+
+        </div>
+
+    </header>
+</header>
+<footer th:fragment="site-footer">
+    <p class="text-header-footer footer">&copy; Teranaz' Library, 2019</p>
+</footer>
+</body>
+</html>

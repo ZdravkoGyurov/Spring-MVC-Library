@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: site-head">
+    <title>Library</title>
+</head>
+<body>
+<header th:replace="layout :: site-header"></header>
+
+<main>
+    <article>
+        <h3 class="title" th:text="${article.title}">Post Title</h3>
+        <div class="date">
+            <i>Posted on</i>
+            <span th:text="${#dates.format(article.date, 'dd-MMM-yyyy')}">22-May-2016</span>
+            <span th:if="${article.author}" th:remove="tag">
+          <i>by</i>
+          <span th:text="${article.author.fullName != null ?
+                        article.author.fullName : article.author.username}">Svetlin Nakov</span>
+        </span>
+        </div>
+        <p class="content" th:utext="${article.body}">Post content</p>
+    </article>
+</main>
+
+<footer th:replace="layout :: site-footer"></footer>
+</body>
+
+</html>
